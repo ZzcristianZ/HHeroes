@@ -1,5 +1,5 @@
 Descripción General
-Este programa simula un juego de combate por turnos en el terminal, donde el jugador puede elegir entre ser un héroe (Goku) o un villano (Zamasu) y enfrentarse a un jefe (Jiren). El jugador y el jefe pueden usar ataques regulares, bonificaciones y habilidades especiales durante el combate.
+Este programa simula un juego de combate por turnos en el terminal, donde el jugador puede elegir entre ser un héroe (Goku) o un villano (Frezzer) y enfrentarse a un jefe (Jiren). El jugador y el jefe pueden usar ataques regulares, bonificaciones y habilidades especiales durante el combate.
 
 Variables Globales
 vidaHeroe: Puntos de vida del héroe (inicialmente 100).
@@ -8,7 +8,7 @@ vidaVillano: Puntos de vida del villano (inicialmente 150).
 
 vidaJefe: Puntos de vida del jefe (inicialmente 200).
 
-personajeSeleccionado: Almacena el nombre del personaje elegido por el jugador (Goku o Zamasu).
+personajeSeleccionado: Almacena el nombre del personaje elegido por el jugador (Goku o Frezzer).
 
 random: Instancia de la clase Random para generar acciones aleatorias del jefe.
 

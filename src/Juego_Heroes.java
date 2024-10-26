@@ -4,7 +4,7 @@ import java.util.Random;
 public class Juego_Heroes {
     private static int vidaHeroe = 100;
     private static int vidaVillano = 150;
-    private static int vidaJefe = 200;
+    private static int vidaJefe = 150;
     private static String personajeSeleccionado;
     private static Random random = new Random();
     private static int usosBonusJugador = 2; // Usos de bonus para el jugador
@@ -29,15 +29,15 @@ public class Juego_Heroes {
         // Selección de personaje
         System.out.println("\nSelecciona tu personaje:");
         System.out.println("1. Héroe (Goku)");
-        System.out.println("2. Villano (Zamasu)");
+        System.out.println("2. Villano (Frezzer)");
         System.out.print("Elección: ");
         int eleccion = scanner.nextInt();
         if (eleccion == 1) {
             personajeSeleccionado = "Goku";
             System.out.println("\nHas seleccionado a Goku.");
         } else if (eleccion == 2) {
-            personajeSeleccionado = "Zamasu";
-            System.out.println("\nHas seleccionado a Zamasu.");
+            personajeSeleccionado = "Frezzer";
+            System.out.println("\nHas seleccionado a Frezzer.");
         } else {
             System.out.println("\nElección inválida. Terminando juego.");
             System.exit(0);
@@ -49,7 +49,7 @@ public class Juego_Heroes {
             System.out.println("\n==================================");
             System.out.println("Turno de " + personajeSeleccionado);
             System.out.println("==================================");
-            System.out.println("1. Disparar");
+            System.out.println("1. ATACAR");
             System.out.println("2. Usar bonus de curación (" + usosBonusJugador + " usos restantes)");
             System.out.println("3. Usar bonus de daño (" + usosBonusDañoJugador + " usos restantes)");
             System.out.println("4. Usar habilidad especial de ataque (" + usosHabilidadEspecialJugador + " usos restantes)");
@@ -85,8 +85,8 @@ public class Juego_Heroes {
             System.out.println("\n¡Enhorabuena! Has derrotado al jefe.");
         } else if (personajeSeleccionado.equals("Goku") && vidaHeroe <= 0) {
             System.out.println("\nGoku ha sido derrotado.");
-        } else if (personajeSeleccionado.equals("Zamasu") && vidaVillano <= 0) {
-            System.out.println("\nZamasu ha sido derrotado.");
+        } else if (personajeSeleccionado.equals("Frezzer") && vidaVillano <= 0) {
+            System.out.println("\nFrezzer ha sido derrotado.");
         }
     }
 
@@ -133,7 +133,7 @@ public class Juego_Heroes {
                 System.out.println("\nGoku usó un bonus de curación y recuperó " + curacion + " de vida.");
             } else {
                 vidaVillano += curacion;
-                System.out.println("\nZamasu usó un bonus de curación y recuperó " + curacion + " de vida.");
+                System.out.println("\nFrezzer usó un bonus de curación y recuperó " + curacion + " de vida.");
             }
             usosBonusJugador--;
         } else {
@@ -146,14 +146,14 @@ public class Juego_Heroes {
         if (accionJefe == 0) {
             System.out.println("\nEl jefe se cubrió.");
         } else if (accionJefe == 1) {
-            int daño = random.nextInt(20) + 1;
+            int daño = random.nextInt(15) + 1;
             daño += dañoAdicionalJefe; // Añadir el daño adicional
             if (personajeSeleccionado.equals("Goku")) {
                 vidaHeroe -= daño;
                 System.out.println("\nEl jefe disparó a Goku causando " + daño + " de daño.");
             } else {
                 vidaVillano -= daño;
-                System.out.println("\nEl jefe disparó a Zamasu causando " + daño + " de daño.");
+                System.out.println("\nEl jefe disparó a Frezzer causando " + daño + " de daño.");
             }
             dañoAdicionalJefe = 0; // Restablecer el daño adicional después del ataque
         } else if (accionJefe == 2 && usosBonusJefe > 0) {
@@ -173,7 +173,7 @@ public class Juego_Heroes {
                 System.out.println("\nEl jefe usó su habilidad especial causando " + dañoEspecial + " de daño a Goku.");
             } else {
                 vidaVillano -= dañoEspecial;
-                System.out.println("\nEl jefe usó su habilidad especial causando " + dañoEspecial + " de daño a Zamasu.");
+                System.out.println("\nEl jefe usó su habilidad especial causando " + dañoEspecial + " de daño a Frezzer.");
             }
             usosHabilidadEspecialJefe--;
         } else if (accionJefe == 5 && usosHabilidadEspecialJefe > 0) {
@@ -195,8 +195,9 @@ public class Juego_Heroes {
         if (personajeSeleccionado.equals("Goku")) {
             System.out.println("Vida de Goku: " + vidaHeroe);
         } else {
-            System.out.println("Vida de Zamasu: " + vidaVillano);
+            System.out.println("Vida de Frezzer: " + vidaVillano);
         }
         System.out.println("---------------------");
     }
+    
 }
